@@ -4,11 +4,11 @@ Coding agents seem to like continuously scrolling text or logo marquees. I don't
 
 ## What it does
 
-The skill measures one complete row and the visible marquee width, then repeats the row until **each of two identical halves** covers the viewport. The track scrolls across one half and resets onto matching content. It also keeps the speed steady when content changes, updates the copies on resize, and makes the row manually scrollable for people who prefer reduced motion.
+The skill adds a little Javascript that measures one complete row and the visible marquee width, then repeats the row until **each of two identical halves** covers the viewport. The track scrolls across one half and resets onto matching content. It also keeps the speed steady when content changes, updates the copies on resize, and makes the row manually scrollable for people who prefer reduced motion.
 
 ## Caveats
 
-The skill was developed for pages using vanilla HTML, CSS, and JavaScript, especially when a short row is shown on a wide screen. It may need adaptation or fail on pages managed by frontend frameworks such as React. It has been tested with Codex only so far, but is intended for any agent or harness that supports the Agent Skills format.
+The skill was developed for pages using vanilla HTML, CSS, and JavaScript, especially when a short row is shown on a wide screen. It may need adaptation or fail on pages managed by frontend frameworks such as React. It has been tested with Codex only so far, but is intended for any agent or harness that supports the Agent Skills format. Feedback about your own testing is very welcome!
 
 ## Install
 
@@ -25,7 +25,7 @@ Download the [repository](https://github.com/JustMeToby/marquee-fix) and copy th
 - Claude Code: `~/.claude/skills/marquee-fix/`
 - Shared agent directory, where supported: `~/.agents/skills/marquee-fix/`
 
-Keep `SKILL.md`, `agents/`, and `references/` together inside that folder. Check your agent's documentation if it uses a different skills directory.
+Check your agent's documentation if it uses a different skills directory.
 
 ## Use
 
