@@ -33,8 +33,6 @@ Ask your agent, for example:
 
 > Use the marquee-fix skill to repair the infinite marquee on my page. Keep its current design and test the loop at mobile, desktop, and high-resolution widths.
 
-The [skill instructions](marquee-fix/SKILL.md) include the coverage formula, implementation guidance, and two sizing examples.
-
 ## License
 
-MIT licensed. You are free to use, modify, and redistribute the skill, including commercially, under the [MIT license terms](https://opensource.org/license/mit).
+[MIT licensed](https://opensource.org/license/mit). Do whatever you want with this.
