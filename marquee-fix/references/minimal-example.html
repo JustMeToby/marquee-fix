@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seamless three-name marquee</title>
+  <style>
+    body { margin: 0; font: 700 20px/1.4 system-ui, sans-serif; }
+    .marquee { overflow: hidden; padding: 20px 0; background: #202720; color: white; }
+    .marquee-track { display: flex; width: max-content; animation: scroll 30s linear infinite paused; }
+    .marquee-row { display: flex; flex: none; gap: 20px; padding-right: 20px; white-space: nowrap; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee { overflow-x: auto; }
+      .marquee-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="marquee" aria-label="Example names">
+    <div class="marquee-track">
+      <div class="marquee-row">
+        <span>Vellora</span><span>Oomi</span><span>Feyro</span>
+      </div>
+    </div>
+  </section>
+  <script>
+    const marquee = document.querySelector('.marquee');
+    const track = marquee.querySelector('.marquee-track');
+    const row = track.firstElementChild;
+
+    function fillMarquee() {
+      const rowWidth = row.getBoundingClientRect().width;
+      if (!rowWidth) return;
+
+      const rowsPerHalf = Math.ceil((marquee.clientWidth + 1) / rowWidth);
+      const needed = rowsPerHalf * 2;
+      while (track.children.length < needed) {
+        const clone = row.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.append(clone);
+      }
+      while (track.children.length > needed) track.lastElementChild.remove();
+      track.style.animationDuration = `${(rowsPerHalf * rowWidth) / 24}s`;
+      track.style.animationPlayState = 'running';
+    }
+
+    fillMarquee();
+    const observer = new ResizeObserver(fillMarquee);
+    observer.observe(marquee);
+    observer.observe(row);
+  </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Marquee Fix"
+  short_description: "Repair seamless scrolling text and logo marquees"
