@@ -8,7 +8,7 @@ The skill adds a little Javascript that measures one complete row and the visibl
 
 ## Caveats
 
-The skill was developed for pages using vanilla HTML, CSS, and JavaScript, especially when a short row is shown on a wide screen. It may need adaptation or fail on pages managed by frontend frameworks such as React. It has been tested with Codex only so far, but is intended for any agent or harness that supports the Agent Skills format. Feedback about your own testing is very welcome!
+The skill was developed for pages using vanilla HTML, CSS, and JavaScript. It may need adaptation or fail on pages managed by frontend frameworks such as React. It has been tested with Codex only so far, but should work with any agent or harness that supports the Agent Skills format. Feedback about any problems or your own test results is very welcome!
 
 ## Install
 
